@@ -1,0 +1,19 @@
+<div class="container" *ngFor="let post of allpost">
+    <div class="post">
+        <div class="post-header">
+            <div class="user-info" id={{post.id}}>
+                <div class="username">{{post.username}}</div>
+                <div class="date">{{post.dateCreated}}</div>
+            </div>
+        </div>
+        <div class="post-title">{{post.title}}</div>
+        <div class="post-description">
+            {{post.content}}
+        </div>
+        <img class="post-image" src={{post.contentMedia}} alt="Post Image">
+        <div class="post-actions">
+            <button class="approve" (click)="approve(post.id)">Approve</button>
+            <button class="reject" (click)="reject(post.id)">Reject</button>
+        </div>
+    </div>
+</div>

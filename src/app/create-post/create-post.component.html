@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Create New Post</h1>
+    <form id="postForm" [formGroup]="form" (ngSubmit)="createpost()">
+        <div class="form-group">
+            <label for="postTitle">Post Title:</label>
+            <input type="text" id="postTitle" name="postTitle" required="" formControlName="title">
+        </div>
+        <div class="form-group">
+            <label for="postDescription">Post Description:</label>
+            <textarea id="postDescription" name="postDescription" required="" formControlName="content"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="postImage">Image URL:</label>
+            <input type="text" id="postImageUrl" name="postImageUrl" required="" formControlName="contentMedia">
+        </div>
+        <button type="submit">Create Post</button>
+
+        <p class="error" *ngIf="error">
+            {{ error }}
+        </p>
+    
+        <p class="success" *ngIf="success">
+            {{ success }}
+        </p>
+    </form>
+</div>

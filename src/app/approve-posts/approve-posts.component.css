@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+.post {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+.post:last-child {
+    border-bottom: none;
+}
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-header .user-info {
+    display: flex;
+    flex-direction: column;
+}
+.post-header .username {
+    font-size: 1.1em;
+}
+.post-header .date {
+    color: #888;
+    font-size: 0.9em;
+}
+.post-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+.post-description {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+.post-image {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+.post-actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.post-actions button.reject {
+    background-color: #dc3545;
+}
+.post-actions button:hover {
+    opacity: 0.8;
+}

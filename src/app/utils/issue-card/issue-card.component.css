@@ -1,0 +1,11 @@
+.issue-card {
+    max-width: 50vh;
+}
+
+img-avatar{
+    margin-right: 2px;
+}
+
+.img-avatar-group {
+    display: flex;
+}

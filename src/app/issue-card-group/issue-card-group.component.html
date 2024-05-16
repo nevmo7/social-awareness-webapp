@@ -1,0 +1,11 @@
+<div class="grid-container">
+    <div class="grid-item" *ngFor="let issue of socialIssues">
+        <app-issue-card 
+            issueName={{issue.title}} 
+            issueCreator={{issue.username}} 
+            issueDescription={{issue.content}}
+            busName={{issue.busName}}
+            id={{issue.id}}>
+        </app-issue-card> 
+    </div>
+</div>
