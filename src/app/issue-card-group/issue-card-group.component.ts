@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   standalone:true
 })
 export class IssueCardGroupComponent {
-
+  host: string = "http://pww.ddns.net"
   socialIssues:any = [];
   ngOnInit(){
     if(localStorage.getItem('jwt') != null){
@@ -29,7 +29,7 @@ export class IssueCardGroupComponent {
   ) { }
 
   getSocialIssues(){
-    this.http.get("http://localhost:8080/userpost/getallpost").subscribe(
+    this.http.get(this.host + "/userpost/getallpost").subscribe(
         data => {
           console.log(data)
           this.socialIssues = data;

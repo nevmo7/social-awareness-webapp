@@ -15,6 +15,22 @@ export class NavBarComponent {
     
   }
 
+  home(){
+    this.router.navigateByUrl("/")
+  }
+
+  approve_posts(){
+    this.router.navigateByUrl("/approve-posts")
+  }
+
+  create_post(){
+    this.router.navigateByUrl("/create-post")
+  }
+
+  register(){
+    this.router.navigateByUrl("/register")
+  }
+
   logout(){
     localStorage.removeItem("jwt");
 

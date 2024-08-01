@@ -20,6 +20,8 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent {
+
+  host: string = "http://pww.ddns.net"
   form: FormGroup = new FormGroup({
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
@@ -42,7 +44,7 @@ export class LoginComponent {
 
       console.log(this.form.value);
       
-      this.http.post("http://localhost:8080/signin", this.form.value, {responseType: "text"}).subscribe(
+      this.http.post(this.host + "/signin", this.form.value, {responseType: "text"}).subscribe(
         (data) => {
           if (data != null) {
             const jwtToken = JSON.parse(data);

@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./single-post.component.css']
 })
 export class SinglePostComponent {
-  
+  host: string = "http://pww.ddns.net"
   public id: any;
 
   public post: any;
@@ -26,7 +26,7 @@ export class SinglePostComponent {
 
   getSinglePost(postId: any) {
     
-    this.http.get("http://localhost:8080/userpost/getsinglepost/" + postId).subscribe(
+    this.http.get(this.host + "/userpost/getsinglepost/" + postId).subscribe(
         (data) => {
           if (data != null) {
             this.post = data;

@@ -16,6 +16,8 @@ import { CommonModule } from '@angular/common';
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatCardModule, ReactiveFormsModule, CommonModule]
 })
 export class RegisterComponent {
+  host: string = "http://pww.ddns.net"
+
   form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     username: new FormControl('', [Validators.required]),
@@ -41,7 +43,7 @@ export class RegisterComponent {
 
       console.log(this.form.value);
       
-      this.http.post("http://localhost:8080/signup", this.form.value, {responseType: 'text'}).subscribe(
+      this.http.post(this.host + "/signup", this.form.value, {responseType: 'text'}).subscribe(
         data => {
           this.error = null
           this.success = data

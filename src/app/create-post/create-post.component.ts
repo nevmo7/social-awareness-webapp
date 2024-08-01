@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class CreatePostComponent {
-
+  host: string = "http://pww.ddns.net"
   jwtToken = localStorage.getItem('jwt');
 
   form: FormGroup = new FormGroup({
@@ -26,7 +26,7 @@ export class CreatePostComponent {
   createpost() {
     console.log(this.form.value);
     
-    this.http.post("http://localhost:8080/userpost/createpost", this.form.value, {responseType: "text"}).subscribe(
+    this.http.post(this.host + "/userpost/createpost", this.form.value, {responseType: "text"}).subscribe(
         (data) => {
           if (data != null) {
             console.log(data)

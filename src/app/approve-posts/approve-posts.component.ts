@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class ApprovePostsComponent {
 
+  host: string = "http://pww.ddns.net"
+
   jwtToken = localStorage.getItem('jwt');
 
   allpost: any;
@@ -32,7 +34,7 @@ export class ApprovePostsComponent {
   approve(id: any){
 
     console.log(id)
-    this.http.post("http://localhost:8080/userpost/authorizepost/true/"+id, {"jwt": this.jwtToken}, {responseType: "text"}).subscribe(
+    this.http.post(this.host + "/userpost/authorizepost/true/"+id, {"jwt": this.jwtToken}, {responseType: "text"}).subscribe(
         (data) => {
           alert(data)
         },
@@ -43,7 +45,7 @@ export class ApprovePostsComponent {
   }
   
   reject(id: any){
-    this.http.post("http://localhost:8080/userpost/authorizepost/false/"+id, {"jwt": this.jwtToken}, {responseType: "text"}).subscribe(
+    this.http.post(this.host + "/userpost/authorizepost/false/"+id, {"jwt": this.jwtToken}, {responseType: "text"}).subscribe(
         (data) => {
           alert(data)
         },
@@ -55,7 +57,7 @@ export class ApprovePostsComponent {
 
   getAllPosts() {
     
-    this.http.post("http://localhost:8080/userpost/getallpost", {"jwt": this.jwtToken}).subscribe(
+    this.http.post(this.host + "/userpost/getallpost", {"jwt": this.jwtToken}).subscribe(
         (data) => {
           if (data != null) {
             this.allpost = data;
